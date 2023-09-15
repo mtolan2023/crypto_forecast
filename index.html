@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CRYPTO</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <style></style>
+  </head>
+
+<body>
+    <div class="container-fluid">
+        
+        
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <h1>Crypo Price Predictions</h1>
+                <p>LSTM Models for forecasting the price of Bitcoin, Ethereum and Litecoin</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Overview</h2>
+                <p class="custom-font-size">This project aims to build and employ price prediction algorithms for cryptocurrency. At the onset, we understand the volatility of such prices and the range of unpredictable factors that influence the prices of crypto, which is why the predictions that we are generating here are quite short. We are using a Keras LSTM (long-short-term-memory) model with TensorFlow to analyze and predict pricing on Bitcoin, Ethereum and Litecoin. For each currency, the historical Adjusted Close data was used to build 7 Day sequences, which are fed into the model. The data is scaled logarithmically before processing and then reverse scaled for predictions. We tried several optimizations for each model and saved the best performing model for each currency. We are using this model to predict the future price of each currency. All Crypto data is being pulled from CoinApi through Python.</p>
+                <p class="custom-font-size">Below is the 7 day prediction for each currency along with several other performance metrics. Following that is a scaled comparison against the NASDAQ and individual breakdowns of price, prediction and testing performance.</p>
+        </div>
+        </div>
+
+    <hr>
+
+
+    <div class="row">
+        
+        <div class="col-md m-2">
+          
+            <h2>Bitcoin</h2>
+                <!-- <p><b>Metrics and Change</b> </p> -->
+                <p id="p"><p>Predicted Next Day Change: <span id="innerPredB"></span></p>
+                <p>Predicted Next Week Change: <span id="innerPredWeekB"></span></p>
+                <p>Last Week Change: <span id="innerWeekB"></span></p>
+                <p>Last Month Change: <span id="innerMonthB"></span></p>
+                <p>YTD Change: <span id="innerYearB"></span></p>
+
+        </div>
+        <div class="col-md-6">
+            <div id="btc_model7"></div>
+        </div>
+    </div>
+    </div>
+
+    <hr> 
+    
+    <div class="row">
+        <div class="col-md-4 m-2">
+            <h2>Ethereum</h2>
+                <!-- <p><b>Metrics and Change</b> </p> -->
+                <p id="p"><p>Predicted Next Day Change: <span id="innerPred"></span></p>
+                <p>Predicted Next Week Change: <span id="innerPredWeek"></span></p>
+                <p>Last Week Change: <span id="innerWeek"></span></p>
+                <p>Last Month Change: <span id="innerMonth"></span></p>
+                <p>YTD Change: <span id="innerYear"></span></p>
+
+        </div>
+        <div class="col-md-6">
+            <div id="eth_model7"></div>
+        </div>
+    </div>
+
+    <hr> 
+    
+    <div class="row">
+        <div class="col-md-4 m-2">
+            <h2>Litecoin</h2>
+                <!-- <p><b>Metrics and Change</b> </p> -->
+                <p id="p"><p>Predicted Next Day Change: <span id="innerPredL"></span></p>
+                <p>Predicted Next Week Change: <span id="innerPredWeekL"></span></p>
+                <p>Last Week Change: <span id="innerWeekL"></span></p>
+                <p>Last Month Change: <span id="innerMonthL"></span></p>
+                <p>YTD Change: <span id="innerYearL"></span></p>
+
+        </div>
+        <div class="col-md-6">
+            <div id="ltc_model7"></div>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-6 m-2">
+            <h3>Scaled Price Comparison</h3>
+            <p class="custom-font-size">
+                Below is a plot which shows the price movement of the 3 currencies over time. Each currency had to be scaled between 0 and 1 in order to put them all on the same plane since their individual values differ greatly. The point of this plot is not to show that one currency is better than another, but it shows their relative value over time and also makes it clear that they largely follow the same path in value. The plot also includes the scaled performance of the NASDAQ (taken from the Yahoo Finance API) so that one can see the correlation or divergence between the index and currency values. 
+            </p>
+        </div>
+    </div>
+       
+    <div class="row">
+        <div class="col-lg m-2">
+        <div id="comp"></div>
+        </div>
+    </div>
+
+    
+
+    <hr>
+    <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Breakdowns by Currency</h1>
+          <p>Lifetime price, predicted price and testing results from training.</p>
+        </div>
+    </div>
+    <hr>
+
+    
+    <div class="row">
+        <div class="col-lg m-2">
+        <h3>Bitcoin</h3>
+        <div id="btc_lifetime"></div>
+        <div id="btc_model"></div>
+        <div id="btc_predict"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 m-2">
+            <p class="custom-font-size">
+                Insert Train/Test summary
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-lg m-2">
+        <h3>Ethereum</h3>
+        <div id="eth_lifetime"></div>
+        <div id="eth_model"></div>
+        <div id="eth_predict"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 m-2">
+            <p class="custom-font-size">
+                Insert Train/Test summary
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-lg m-2">
+        <h3>Litecoin</h3>
+        <div id="ltc_lifetime"></div>
+        <div id="ltc_model"></div>
+        <div id="ltc_predict"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 m-2">
+            <p class="custom-font-size">
+                Insert Train/Test summary
+            </p>
+        </div>
+    </div>
+
+</div>
+
+        <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/>
+    <canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
+
+
+    <!-- Chart.js JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js" integrity="sha512-wUYbRPLV5zs6IqvWd88HIqZU/b8TBx+I8LEioQ/UC0t5EMCLApqhIAnUg7EsAzdbhhdgW07TqYDdH3QEXRcPOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Chart.js annotation plug-in --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script> 
+
+  <!-- Plotly script -->
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+
+    <!-- D3 JavaScript -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+     <script type="text/javascript" src="static/js/comp.js"></script>
+
+     <script type="text/javascript" src="static/js/btc_model.js"></script>
+     <script type="text/javascript" src="static/js/btc_lifetime.js"></script>
+     <script type="text/javascript" src="static/js/btc_predict.js"></script>
+
+     <script type="text/javascript" src="static/js/eth_model.js"></script>
+     <script type="text/javascript" src="static/js/eth_lifetime.js"></script>
+     <script type="text/javascript" src="static/js/eth_predict.js"></script>
+
+     <script type="text/javascript" src="static/js/ltc_model.js"></script>
+     <script type="text/javascript" src="static/js/ltc_lifetime.js"></script>
+     <script type="text/javascript" src="static/js/ltc_predict.js"></script>
+  </body>
+</html>
+
+       
