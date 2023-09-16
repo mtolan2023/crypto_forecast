@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CRYPTO</title>
+    <title>Predicting Crypto</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -29,8 +29,8 @@
         
         <div class="row">
             <div class="col-xl-1 jumbotron text-center">
-                <h1>Crypo Price Predictions</h1>
-                <p>LSTM Models for forecasting the price of Bitcoin, Ethereum and Litecoin</p>
+                <h1>Predicting Cryptocurrency</h1>
+                <p>LSTM Models for Forecasting the Price of Bitcoin, Ethereum and Litecoin</p>
             </div>
         </div>
 
@@ -48,16 +48,15 @@
     <div class="row">
         
         <div class="col-md-4 m-2">
-          
-            <h2>Bitcoin</h2>
+            <h2>Bitcoin (BTC)</h2>
                 <!-- <p><b>Metrics and Change</b> </p> -->
                 <p id="p"><p>Predicted Next Day Change: <span id="innerPredB"></span></p>
                 <p>Predicted Next Week Change: <span id="innerPredWeekB"></span></p>
                 <p>Last Week Change: <span id="innerWeekB"></span></p>
                 <p>Last Month Change: <span id="innerMonthB"></span></p>
                 <p>YTD Change: <span id="innerYearB"></span></p>
-
         </div>
+
         <div class="col-md-6">
             <div id="btc_model7"></div>
         </div>
@@ -68,7 +67,7 @@
     
     <div class="row">
         <div class="col-md-4 m-2">
-            <h2>Ethereum</h2>
+            <h2>Ethereum (ETH)</h2>
                 <!-- <p><b>Metrics and Change</b> </p> -->
                 <p id="p"><p>Predicted Next Day Change: <span id="innerPred"></span></p>
                 <p>Predicted Next Week Change: <span id="innerPredWeek"></span></p>
@@ -86,7 +85,7 @@
     
     <div class="row">
         <div class="col-md-4 m-2">
-            <h2>Litecoin</h2>
+            <h2>Litecoin (LTC)</h2>
                 <!-- <p><b>Metrics and Change</b> </p> -->
                 <p id="p"><p>Predicted Next Day Change: <span id="innerPredL"></span></p>
                 <p>Predicted Next Week Change: <span id="innerPredWeekL"></span></p>
@@ -188,17 +187,6 @@
     </div>
 
 </div>
-
-        <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/>
-    <canvas id="myChart" style="width:100%;max-width:1200px"></canvas>
-
-
-    <!-- Chart.js JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js" integrity="sha512-wUYbRPLV5zs6IqvWd88HIqZU/b8TBx+I8LEioQ/UC0t5EMCLApqhIAnUg7EsAzdbhhdgW07TqYDdH3QEXRcPOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Chart.js annotation plug-in --> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script> 
 
   <!-- Plotly script -->
    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
