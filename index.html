@@ -21,16 +21,21 @@
 
 <body>
     <div class="container-fluid">
-        
+
+        <div class="row">
+                <img src="images/header.jpeg" alt="header" width="1166"><img/>
+            </div>
+        </div>
         
         <div class="row">
-            <div class="col-md-12 jumbotron text-center">
+            <div class="col-xl-1 jumbotron text-center">
                 <h1>Crypo Price Predictions</h1>
                 <p>LSTM Models for forecasting the price of Bitcoin, Ethereum and Litecoin</p>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 m-2">
                 <h2>Overview</h2>
                 <p class="custom-font-size">This project aims to build and employ price prediction algorithms for cryptocurrency. At the onset, we understand the volatility of such prices and the range of unpredictable factors that influence the prices of crypto, which is why the predictions that we are generating here are quite short. We are using a Keras LSTM (long-short-term-memory) model with TensorFlow to analyze and predict pricing on Bitcoin, Ethereum and Litecoin. For each currency, the historical Adjusted Close data was used to build 7 Day sequences, which are fed into the model. The data is scaled logarithmically before processing and then reverse scaled for predictions. We tried several optimizations for each model and saved the best performing model for each currency. We are using this model to predict the future price of each currency. All Crypto data is being pulled from CoinApi through Python.</p>
                 <p class="custom-font-size">Below is the 7 day prediction for each currency along with several other performance metrics. Following that is a scaled comparison against the NASDAQ and individual breakdowns of price, prediction and testing performance.</p>
@@ -114,14 +119,17 @@
 
     
 
-    <hr>
+    <div class="row">
+        <img src="images/break.jpeg" alt="header" width="1166"><img/>
+    </div>
+</div>
     <div class="row">
         <div class="col-md-12 jumbotron text-center">
           <h1>Breakdowns by Currency</h1>
           <p>Lifetime price, predicted price and testing results from training.</p>
         </div>
     </div>
-    <hr>
+ 
 
     
     <div class="row">

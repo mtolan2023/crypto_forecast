@@ -127,14 +127,13 @@ var layout = {
   var data = [trace1, trace2];
   
   Plotly.newPlot('btc_model7', data, layout);
-   
 
   var trace1 = {
     x: monthDate,
     y: monthObs,
     name: 'Observed',
     line: {
-      color: 'purple',
+      color: '#0096FF',
       width: 3
     },
     type: 'scatter'
@@ -154,7 +153,7 @@ var layout = {
   
 var layout2 = {
     title: {
-      text:'Bitcoin (BTC) 7-Day Price Prediction (USD)',
+      text:'Bitcoin 7-Day Price Prediction (USD)',
     },
     xaxis: {
       title: {
@@ -174,6 +173,94 @@ var layout2 = {
   Plotly.newPlot('btc_model', data2, layout2);
 
 });
+
+// // Request data using D3
+// d3.csv('output/btc_model_hist.csv').then(function(data) {
+//   console.log("hist", data)
+
+//   const date = [];
+//   const observed = [];
+//   const future = [];
+//   const past = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//      date.push(data[i].Date)
+//      observed.push(data[i].observed)
+//      future.push(data[i].future_prediction)
+//      past.push(data[i].past_pred)
+//    }
+
+//    let lastDay  = Number(observed.slice(-8,-7))
+//    let lastPred = Number(future.slice(-1))
+
+//    // Color labeling for stock change
+// let preColor
+
+// if (lastPred > lastDay) {
+//     preColor = 'green'
+//   } else {
+//     preColor = 'red'
+//   }
+    
+
+
+
+//   var trace1 = {
+//     x: date,
+//     y: observed,
+//     name: 'Observed',
+//     line: {
+//       color: 'purple',
+//       width: 3
+//     },
+//     type: 'scatter'
+//   };
+  
+//   var trace2 = {
+//     x: date,
+//     y: future,
+//     name: 'Predicted',
+//     line: {
+//       color: preColor,
+//       width: 3
+//     },
+//     type: 'scatter'
+//   };
+
+//   var trace3 = {
+//     x: date,
+//     y: past,
+//     name: 'Past Predictions',
+//     line: {
+//       color: preColor,
+//       width: 3
+//     },
+//     type: 'scatter'
+//   };
+
+  
+// var layout2 = {
+//     title: {
+//       text:'Bitcoin (BTC) 7-Day Price Prediction Past Performance (USD)',
+//     },
+//     xaxis: {
+//       title: {
+//         text: 'Date',
+//      },
+//     },
+//     yaxis: {
+//       title: {
+//         text: 'Price (USD)'
+//       },
+//     },
+//   };
+
+
+//   var data2 = [trace1, trace2, trace3];
+  
+//   Plotly.newPlot('btc_model', data2, layout2);
+
+// });
 
 
 
