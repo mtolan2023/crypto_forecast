@@ -90,7 +90,7 @@ var trace1 = {
     name: 'Observed',
     line: {
       color: 'purple',
-      width: 2
+      width: 3
     },
     type: 'scatter'
   };
@@ -133,7 +133,7 @@ var layout = {
     y: monthObs,
     name: 'Observed',
     line: {
-      color: '#0096FF',
+      color: 'purple',
       width: 3
     },
     type: 'scatter'

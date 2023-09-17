@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-xl-1 jumbotron text-center">
                 <h1>Predicting Cryptocurrency</h1>
-                <p>LSTM Models for Forecasting the Price of Bitcoin, Ethereum and Litecoin</p>
+                <p>LSTM Models for Forecasting the Value of Bitcoin, Ethereum and Litecoin</p>
             </div>
         </div>
 
@@ -128,61 +128,58 @@
           <p>Lifetime price, predicted price and testing results from training.</p>
         </div>
     </div>
- 
 
-    
+    <div class="row">
+        <div class="col-md-6 m-2">
+            <h3>Bitcoin</h3>
+            <p class="custom-font-size">
+                Three models were constructed, the first with the full range of dates, the second and third beginning in 2018, when the price saw a first major increase. An r2 score of .89 was achieved with the third model. When tested on future predictions, each model yielded similar results.
+            </p>
+        </div>
+    </div>
+ 
     <div class="row">
         <div class="col-lg m-2">
-        <h3>Bitcoin</h3>
         <div id="btc_lifetime"></div>
         <div id="btc_model"></div>
         <div id="btc_predict"></div>
         </div>
     </div>
 
+    <hr>
+
     <div class="row">
         <div class="col-md-6 m-2">
+            <h3>Ethereum</h3>
             <p class="custom-font-size">
-                Insert Train/Test summary
+                As with Bitcoin, 3 LSTM models were built to train and test on historical data, with the second and third using just the most recent half of the data. The R2 Score was .90 using the third model, which was trained for 300 epochs.    </div>
             </p>
         </div>
     </div>
 
-    <hr>
-
     <div class="row">
         <div class="col-lg m-2">
-        <h3>Ethereum</h3>
         <div id="eth_lifetime"></div>
         <div id="eth_model"></div>
         <div id="eth_predict"></div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6 m-2">
-            <p class="custom-font-size">
-                Insert Train/Test summary
-            </p>
-        </div>
-    </div>
-
     <hr>
 
     <div class="row">
-        <div class="col-lg m-2">
-        <h3>Litecoin</h3>
-        <div id="ltc_lifetime"></div>
-        <div id="ltc_model"></div>
-        <div id="ltc_predict"></div>
+        <div class="col-md-6 m-2">
+            <h3>Litecoin</h3>
+            <p class="custom-font-size">
+                Litecoin also used 3 LSTM models with a max R2 Score of .92 using the third model with a learning rate of .0001, trained for 300 epochs. As with the other 2 currencies, the 3 models performed similarly in testing and prediction. It may be possible to achieve a higher R2 Score with increased epochs of training or a slower learning rate but it is not immediately clear if this will have the effect of greater accuracy in future prediction given the extent that all outside factors have on value change in currencies.             </p>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6 m-2">
-            <p class="custom-font-size">
-                Insert Train/Test summary
-            </p>
+        <div class="col-lg m-2">
+        <div id="ltc_lifetime"></div>
+        <div id="ltc_model"></div>
+        <div id="ltc_predict"></div>
         </div>
     </div>
 
