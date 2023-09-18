@@ -1,5 +1,5 @@
 # Predicting Cryptocurrency
-## Using LSTM Models to predict the value of Bitcoin, Ethereal and Litecoin
+## Using LSTM Models to predict the value of Bitcoin, Ethereum and Litecoin
 
 
 ## Overview: 
