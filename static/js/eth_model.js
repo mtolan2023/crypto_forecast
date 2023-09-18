@@ -188,7 +188,7 @@ var layout = {
     name: 'Predicted Model 3',
     line: {
       color: 'green',
-      width: 3
+      width: 5
     },
     type: 'scatter'
   };

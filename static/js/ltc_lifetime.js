@@ -1,7 +1,7 @@
 
 
 // Request data using D3
-d3.csv('output/ltc_lifetime.csv').then(function(data) {
+d3.csv('output/ltc_lifetime_30.csv').then(function(data) {
     console.log("ltc lifetime", data)
 
     const date = [];
