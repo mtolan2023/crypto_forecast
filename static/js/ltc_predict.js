@@ -2,7 +2,7 @@
 
 // Request data using D3
 d3.csv('output/ltc_predict.csv').then(function(data) {
-  console.log(data)
+  console.log("ltc predict", data)
 
   const date = [];
   const observed = [];

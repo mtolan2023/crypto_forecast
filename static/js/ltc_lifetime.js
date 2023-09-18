@@ -2,7 +2,7 @@
 
 // Request data using D3
 d3.csv('output/ltc_lifetime.csv').then(function(data) {
-    console.log(data)
+    console.log("ltc lifetime", data)
 
     const date = [];
     const close = [];

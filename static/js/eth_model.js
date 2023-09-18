@@ -2,31 +2,47 @@
 
 // Request data using D3
 d3.csv('output/eth_model.csv').then(function(data) {
-    console.log(data)
+    console.log("eth model data", data)
 
-    const date = [];
-    const observed = [];
-    const future = [];
+   
+  const date = [];
+  const observed = [];
+  const future = [];
+  const future2 = [];
+  const future3 = [];
+  const mean = [];
 
-// Pull data from csv
-    for (let i = 0; i < data.length; i++) {
-       date.push(data[i].Date)
-       observed.push(data[i].observed)
-       future.push(data[i].future_prediction)
-     }
+
+
+  for (let i = 0; i < data.length; i++) {
+     date.push(data[i].Date)
+     observed.push(data[i].observed)
+     future.push(data[i].future_prediction)
+     future2.push(data[i].future_prediction2)
+     future3.push(data[i].future_prediction3)
+     mean.push(data[i].mean)
+   }
 
 console.log("date", date)
 console.log("observed", observed)
 console.log("future", future)
+console.log("future2", future2)
+console.log("future3", future3)
+console.log("mean", mean)
 
-// Slice dates for calculations
+// Slice times to get start and end dates for metrics
 var monthDate = date.slice(-37,)
 var monthObs = observed.slice(-37,)
 var monthFut = future.slice(-37,);
+var monthFut2 = future2.slice(-37,);
+var monthFut3 = future3.slice(-37,);
+var monthMean = mean.slice(-37,);
+
 
 let lastDay  = Number(observed.slice(-8,-7))
 let lastPred = Number(future.slice(-1))
 let firstPred = Number(future.slice(-7,-6))
+
 
 let lastWeek = Number(observed.slice(-31,-30))
 let lastMonth = Number(observed.slice(-61,-60))
@@ -101,7 +117,7 @@ var trace1 = {
   
   var trace2 = {
     x: date.slice(-28,),
-    y: future.slice(-28,),
+    y: future3.slice(-28,),
     name: 'Predicted',
     line: {
       color: preColor,
@@ -147,18 +163,51 @@ var layout = {
   var trace2 = {
     x: monthDate,
     y: monthFut,
-    name: 'Predicted',
+    name: 'Predicted Model 1',
     line: {
-      color: preColor,
+      color: 'red',
       width: 3
     },
     type: 'scatter'
   };
 
+  var trace3 = {
+    x: monthDate,
+    y: monthFut2,
+    name: 'Predicted Model 2',
+    line: {
+      color: 'orange',
+      width: 3
+    },
+    type: 'scatter'
+  };
+
+  var trace4 = {
+    x: monthDate,
+    y: monthFut3,
+    name: 'Predicted Model 3',
+    line: {
+      color: 'green',
+      width: 3
+    },
+    type: 'scatter'
+  };
+
+  var trace5 = {
+    x: monthDate,
+    y: monthMean,
+    name: 'Predicted Mean',
+    line: {
+      dash: 'dot',
+      color: 'black',
+      width: 3
+    },
+    type: 'scatter'
+  };
   
 var layout2 = {
     title: {
-      text:'Ethereum (ETH) 7-Day Price Prediction (USD)',
+      text:'Ethereum (ETH) 7-Day Price Prediction Model Comparison (USD)',
     },
     xaxis: {
       title: {
@@ -173,7 +222,7 @@ var layout2 = {
   };
 
 
-  var data2 = [trace1, trace2];
+  var data2 = [trace1, trace2, trace3, trace4, trace5];
   
   Plotly.newPlot('eth_model', data2, layout2);
 

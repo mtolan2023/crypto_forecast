@@ -2,7 +2,7 @@
 
 // Request data using D3
 d3.csv('output/eth_predict.csv').then(function(data) {
-  console.log(data)
+  console.log("eth predict", data)
 
   const date = [];
   const observed = [];

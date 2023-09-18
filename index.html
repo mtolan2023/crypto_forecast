@@ -23,7 +23,7 @@
     <div class="container-fluid">
 
         <div class="row">
-                <img src="images/header.jpeg" alt="header" width="1166"><img/>
+                <img src="images/header.jpeg" alt="header" class="img-fluid"><img/>
             </div>
         </div>
         
@@ -99,7 +99,10 @@
         </div>
     </div>
 
-    <hr>
+    <div class="row">
+        <img src="images/break2.jpeg" alt="header" class="img-fluid"><img/>
+    </div>
+    </div>
     
     <div class="row">
         <div class="col-md-6 m-2">
@@ -119,13 +122,14 @@
     
 
     <div class="row">
-        <img src="images/break.jpeg" alt="header" width="1166"><img/>
+        <img src="images/break.jpeg" alt="header" class="img-fluid"><img/>
     </div>
-</div>
+    </div>
+
     <div class="row">
         <div class="col-md-12 jumbotron text-center">
           <h1>Breakdowns by Currency</h1>
-          <p>Lifetime price, predicted price and testing results from training.</p>
+          <p>Lifetime price, predicted price, and testing results from training.</p>
         </div>
     </div>
 
@@ -133,8 +137,7 @@
         <div class="col-md-6 m-2">
             <h3>Bitcoin</h3>
             <p class="custom-font-size">
-                Three models were constructed, the first with the full range of dates, the second and third beginning in 2018, when the price saw a first major increase. An r2 score of .89 was achieved with the third model. When tested on future predictions, each model yielded similar results.
-            </p>
+                Three LSTM models were constructed, the first with the full range of dates, the second and third beginning in 2018, when the price saw a first major increase. All 3 models use a 7 day lookback window for input with 1 LSTM layer and 2 hidden layers. An R2 Score of .96 was achieved with the first model, which could not be improved upon with the other optimizations.            </p>
         </div>
     </div>
  
@@ -171,7 +174,8 @@
         <div class="col-md-6 m-2">
             <h3>Litecoin</h3>
             <p class="custom-font-size">
-                Litecoin also used 3 LSTM models with a max R2 Score of .92 using the third model with a learning rate of .0001, trained for 300 epochs. As with the other 2 currencies, the 3 models performed similarly in testing and prediction. It may be possible to achieve a higher R2 Score with increased epochs of training or a slower learning rate but it is not immediately clear if this will have the effect of greater accuracy in future prediction given the extent that all outside factors have on value change in currencies.             </p>
+                Litecoin also used 3 LSTM models with a max R2 Score of .92 using the third model with a learning rate of .0001, trained for 300 epochs. As with the other 2 currencies, the 3 models performed similarly in testing and prediction. It may be possible to achieve a higher R2 Score with increased epochs of training or a slower learning rate but it is not immediately clear if this will have the effect of greater accuracy in future prediction given the extent that all outside factors have on value change in currencies.        
+            </p>
         </div>
     </div>
 
@@ -184,6 +188,22 @@
     </div>
 
 </div>
+
+<div class="row">
+    <div class="col-md-12 jumbotron text-center">
+      <h1>Conclusions</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 m-2">
+        <p class="custom-font-size">
+            It will take some additional observation and testing to assess the accuracy of the models developed for each currency. Since there are no obvious patterns present in currency price data (as there may be in annual temperature data or any trend with a seasonal pattern), it will be difficult to predict very far ahead. Ideally, these models will be tuned to predict movement more precisely but with this initial deployment, they are at least showing the power of LSTM to learn and train on past patterns.
+        </p>
+</div>
+</div>
+
+
 
   <!-- Plotly script -->
    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
