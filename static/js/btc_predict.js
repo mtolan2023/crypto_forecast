@@ -36,7 +36,7 @@ var trace1 = {
     y: predicted1,
     name: 'Model 1 Predicted',
     line: {
-      color: 'orange',
+      color: 'red',
       width: 2
     },
     type: 'scatter'
@@ -47,7 +47,7 @@ var trace1 = {
     y: predicted2,
     name: 'Model 2 Predicted',
     line: {
-      color: 'green',
+      color: 'orange',
       width: 2
     },
     type: 'scatter'
@@ -58,7 +58,7 @@ var trace1 = {
     y: predicted3,
     name: 'Model 3 Predicted',
     line: {
-      color: 'red',
+      color: 'green',
       width: 2
     },
     type: 'scatter'

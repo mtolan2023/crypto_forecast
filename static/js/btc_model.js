@@ -111,7 +111,7 @@ var trace1 = {
   
   var trace2 = {
     x: date.slice(-28,),
-    y: future2.slice(-28,),
+    y: future.slice(-28,),
     name: 'Predicted',
     line: {
       color: preColor,
@@ -155,7 +155,7 @@ var layout = {
   
   var trace2 = {
     x: monthDate,
-    y: monthFut2,
+    y: monthFut,
     name: 'Predicted Model 1',
     line: {
       color: 'red',
@@ -166,7 +166,7 @@ var layout = {
 
   var trace3 = {
     x: monthDate,
-    y: monthFut3,
+    y: monthFut2,
     name: 'Predicted Model 2',
     line: {
       color: 'orange',
@@ -177,7 +177,7 @@ var layout = {
 
   var trace4 = {
     x: monthDate,
-    y: monthFut,
+    y: monthFut3,
     name: 'Predicted Model 3',
     line: {
       color: 'green',

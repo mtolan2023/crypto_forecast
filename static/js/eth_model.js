@@ -40,8 +40,8 @@ var monthMean = mean.slice(-37,);
 
 
 let lastDay  = Number(observed.slice(-8,-7))
-let lastPred = Number(future.slice(-1))
-let firstPred = Number(future.slice(-7,-6))
+let lastPred = Number(future3.slice(-1))
+let firstPred = Number(future3.slice(-7,-6))
 
 
 let lastWeek = Number(observed.slice(-31,-30))
