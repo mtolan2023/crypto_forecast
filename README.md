@@ -15,11 +15,13 @@ The website also contains a plot that shows the price movement of the 3 currenci
 ## Individual Currency Breakdowns:
 
 For each of the 3 Currencies approached here, there are plots for historical value, the performance against test data for the 3 models, and the predictions of each model for the next 7 days. There is also a mean line for the predicted data, since it may be more useful to take the 3 models in as an ensemble and try to draw a conclusion from them as a whole.
+
+![newplot (4)](https://github.com/mtolan2023/crypto_forecast/assets/123139216/412a1ab5-4d90-4ecf-9d32-3188a8d5c12c)
+
 ![newplot (2)](https://github.com/mtolan2023/crypto_forecast/assets/123139216/d8edd13d-90df-4c31-80e3-37de911ba450)
 
 ![newplot (3)](https://github.com/mtolan2023/crypto_forecast/assets/123139216/58995ab4-07ef-4f33-b3a2-1a08d06774ef)
 
-![newplot (4)](https://github.com/mtolan2023/crypto_forecast/assets/123139216/412a1ab5-4d90-4ecf-9d32-3188a8d5c12c)
 
 ## Conclusions:
 
@@ -31,4 +33,5 @@ It will take some additional observation and testing to assess the accuracy of t
 The following tutorials were used to inform the design of the models and preparation of data. The google colab notebooks were also used to build charts for training, testing and validation data.
 
 https://www.youtube.com/watch?v=CbTU92pbDKw
+
 https://www.youtube.com/watch?v=q_HS4s1L8UI&t=1252s
