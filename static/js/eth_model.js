@@ -48,11 +48,6 @@ let lastWeek = Number(observed.slice(-31,-30))
 let lastMonth = Number(observed.slice(-61,-60))
 let lastYear = Number(observed.slice(0,1))
 
-
-// console.log('last day', lastDay)
-// console.log('last predict', lastPred)
-// console.log('first predict', firstPred)
-
 // Color Labels for up/down
 function changeColor(x) {
   if (x >= 0) {return 'green'}

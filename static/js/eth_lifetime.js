@@ -1,5 +1,3 @@
-
-
 // Request data using D3
 d3.csv('output/eth_lifetime.csv').then(function(data) {
     console.log("eth lifetime", data)

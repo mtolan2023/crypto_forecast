@@ -1,5 +1,3 @@
-
-
 // Request data using D3
 d3.csv('output/scaled_comparison.csv').then(function(data) {
     console.log("comp", data)
