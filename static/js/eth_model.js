@@ -100,8 +100,8 @@ if (lastPred > lastDay) {
 
 // Build Plot
 var trace1 = {
-    x: date.slice(-28,),
-    y: observed.slice(-28,),
+    x: date.slice(-39,),
+    y: observed.slice(-39,),
     name: 'Observed',
     line: {
       color: '#0096FF',
@@ -111,8 +111,8 @@ var trace1 = {
   };
   
   var trace2 = {
-    x: date.slice(-28,),
-    y: future3.slice(-28,),
+    x: date.slice(-39,),
+    y: future3.slice(-39,),
     name: 'Predicted',
     line: {
       color: preColor,

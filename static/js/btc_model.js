@@ -95,8 +95,8 @@ if (lastPred > lastDay) {
 
 // Build plot - slice times to show specific preiods
 var trace1 = {
-    x: date.slice(-28,),
-    y: observed.slice(-28,),
+    x: date.slice(-39,),
+    y: observed.slice(-39,),
     name: 'Observed',
     line: {
       color: 'purple',
@@ -106,8 +106,8 @@ var trace1 = {
   };
   
   var trace2 = {
-    x: date.slice(-28,),
-    y: future2.slice(-28,),
+    x: date.slice(-39,),
+    y: future2.slice(-39,),
     name: 'Predicted',
     line: {
       color: preColor,
