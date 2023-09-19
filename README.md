@@ -1,6 +1,8 @@
 # Predicting Cryptocurrency
 ## Using LSTM Models to predict the value of Bitcoin, Ethereum and Litecoin
 
+Github Pages deployment: https://mtolan2023.github.io/crypto_forecast/
+
 
 ## Overview: 
 This project aims to build and employ price prediction algorithms for cryptocurrency. At the onset, we understand the volatility of such prices and the range of unpredictable factors that influence the prices of crypto, which is why the predictions that we are generating here are quite short. We are using a Keras LSTM (long-short-term-memory) model with TensorFlow to analyze and predict pricing on Bitcoin, Ethereum and Litecoin. For each currency, the historical Adjusted Close data was used to build 7 Day sequences, which are fed into the model. The data is scaled logarithmically before processing and then reverse scaled for predictions. We tried several optimizations for each model and saved the best performing model for each currency. We are using this model to predict the future price of each currency. All Crypto data is being pulled from CoinApi through Python.
