@@ -38,7 +38,7 @@
             <div class="col-md-6 m-2">
                 <h2>Overview</h2>
                 <p class="custom-font-size">
-                    This project aims to build and employ price prediction algorithms for cryptocurrency. At the onset, we understand the volatility of such prices and the range of unpredictable factors that influence the prices of crypto, which is why the predictions that we are generating here are quite short. We are using a Keras LSTM (long-short-term-memory) model with TensorFlow to analyze and predict pricing on Bitcoin, Ethereum and Litecoin. For each currency, the historical Adjusted Close data was used to build 7 Day sequences, which are fed into the model. The data is scaled logarithmically before processing and then reverse scaled for predictions. We tried several optimizations for each model and saved the best performing model for each currency. We are using this model to predict the future price of each currency. All Crypto data is being pulled from CoinApi through Python.
+                    This project aims to build and employ price prediction algorithms for cryptocurrency. At the onset, we understand the volatility of such prices and the range of unpredictable factors that influence the prices of crypto, which is why the predictions that we are generating here are quite short. We are using a Keras LSTM (long-short-term-memory) model with TensorFlow to analyze and predict pricing on Bitcoin, Ethereum and Litecoin. For each currency, the historical Adjusted Close data was used to build into 7 and 30 Day time sequences, which were fed into the model. The data is scaled logarithmically before processing and then reverse scaled for graphing predictions. We tried several optimizations for each model and saved the best performing model for each currency. We are using this model to predict the future price of each currency. All Crypto data is being pulled from CoinApi through Python.                </p>
                 </p>
                 <p class="custom-font-size">
                     Below is the 7 day prediction for each currency along with several other performance metrics. Following that is a scaled comparison against the NASDAQ and individual breakdowns of price, prediction and testing performance.
@@ -141,7 +141,7 @@
         <div class="col-md-6 m-2">
             <h3>Bitcoin</h3>
             <p class="custom-font-size">
-                Three LSTM models were constructed, the first with the full range of dates, the second and third beginning in 2018, when the price saw a first major increase. All 3 models use a 30 day lookback window for input with 1 LSTM layer and 2 hidden layers. An R2 Score of .92 was achieved with the third model. 
+                Three LSTM models were constructed, the first with the full range of dates, the second and third beginning in 2018, when the price saw a first major increase. In this case, we experimented with using a Bidirectional LSTM, which yielded very high scores for the first model but poorer results for the reduced dataset. As a result, we only used the Bidirectional method for the first model, which we chose for prediction. The first 2 models use a 7 day lookback window for input with 1 LSTM layer and 2 hidden layers. The third model uses 2 LSTM layers and 1 hidden layer. An R2 Score of .96 was achieved with the first model. 
             </p>
         </div>
     </div>
@@ -179,9 +179,9 @@
         <div class="col-md-6 m-2">
             <h3>Litecoin</h3>
             <p class="custom-font-size">
-                Litecoin also used 30 Day Lookback LSTM models with a max R2 Score of .92 using the first model with a learning rate of .0001, trained for 300 epochs. As with the other 2 currencies, the 3 models performed similarly in testing and prediction. It may be possible to achieve a higher R2 Score with increased epochs of training or a slower learning rate but it is not immediately clear if this will have the effect of greater accuracy in future prediction given the extent that all outside factors have on value change in currencies.             </p>
+                Litecoin used 30 Day Lookback LSTM models with a max R2 Score of .92 using the first model with a learning rate of .0001, trained for 300 epochs. It may be possible to achieve a higher R2 Score with increased epochs of training or a slower learning rate but it is not immediately clear if this will have the effect of greater accuracy in future prediction given the extent that all outside factors have on value change in currencies.             </p>
             </p>
-        </div>
+            </div>
     </div>
 
     <div class="row">

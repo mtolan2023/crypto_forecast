@@ -1,7 +1,7 @@
 
 
 // Request data using D3
-d3.csv('output/btc_predict_30.csv').then(function(data) {
+d3.csv('output/btc_predict.csv').then(function(data) {
     console.log("btc predict", data)
 
     const date = [];
