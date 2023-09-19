@@ -38,8 +38,8 @@ var monthFut3 = future3.slice(-37,);
 var monthMean = mean.slice(-37,);
 
 let lastDay  = Number(observed.slice(-8,-7))
-let lastPred = Number(future.slice(-1))
-let firstPred = Number(future.slice(-7,-6))
+let lastPred = Number(future2.slice(-1))
+let firstPred = Number(future2.slice(-7,-6))
 
 let lastWeek = Number(observed.slice(-31,-30))
 let lastMonth = Number(observed.slice(-61,-60))
@@ -107,7 +107,7 @@ var trace1 = {
   
   var trace2 = {
     x: date.slice(-28,),
-    y: future.slice(-28,),
+    y: future2.slice(-28,),
     name: 'Predicted',
     line: {
       color: preColor,
@@ -155,7 +155,7 @@ var layout = {
     name: 'Predicted Model 1',
     line: {
       color: 'red',
-      width: 5
+      width: 3
     },
     type: 'scatter'
   };
@@ -166,7 +166,7 @@ var layout = {
     name: 'Predicted Model 2',
     line: {
       color: 'orange',
-      width: 3
+      width: 5
     },
     type: 'scatter'
   };
