@@ -1,6 +1,6 @@
 
 // Request data using D3
-d3.csv('output/btc_lifetime_30.csv').then(function(data) {
+d3.csv('output/btc_lifetime.csv').then(function(data) {
     console.log("btc lifetime", data)
 
     const date = [];
